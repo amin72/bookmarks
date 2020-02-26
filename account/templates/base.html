@@ -27,6 +27,8 @@
                 <a href="{% url "account:logout" %}">Logout</a>
             {% else %}
                 <a href="{% url "account:login" %}">Log-in</a>
+                &nbsp;
+                <a href="{% url "account:register" %}">Register</a>
             {% endif %}
         </span>
     </div>
