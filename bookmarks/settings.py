@@ -43,6 +43,9 @@ INSTALLED_APPS = [
 
     # third-party apps
     'social_django',
+
+    # local apps
+    'images.apps.ImagesConfig',
 ]
 
 MIDDLEWARE = [
