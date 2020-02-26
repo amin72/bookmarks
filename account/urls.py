@@ -45,4 +45,7 @@ urlpatterns = [
 
     # register
     path('register/', views.register, name='register'),
+
+    # edit user
+    path('edit/', views.edit, name='edit'),
 ]
