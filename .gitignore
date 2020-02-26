@@ -22,4 +22,4 @@ script.sh
 tmp/
 db.sqlite3
 results.sqlite
-static/
+ngrok
