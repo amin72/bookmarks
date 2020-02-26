@@ -25,7 +25,7 @@ SECRET_KEY = '+tkqowbit+a!aqg_21%%tn9g*wii#!=74*+=ltshjoz2vn!2em'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bookmark.ir', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['bookmark.ir', 'localhost', '127.0.0.1', '56a95f94.ngrok.io']
 
 
 # Application definition
