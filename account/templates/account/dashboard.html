@@ -7,4 +7,8 @@
 {% block content %}
     <h1>Dashboard</h1>
     <p>Welcome to your dashboard.</p>
+
+    <div class="">
+        <a href="{% url 'account:password_change' %}">Reset your password here</a>
+    </div>
 {% endblock %}
