@@ -6,9 +6,5 @@
 
 {% block content %}
     <h1>Dashboard</h1>
-    <p>Welcome to your dashboard.</p>
-
-    <div class="">
-        <a href="{% url 'account:password_change' %}">Reset your password here</a>
-    </div>
+    <p>Welcome to your dashboard. You can <a href="{% url "account:edit" %}">edit your profile</a> or <a href="{% url "account:password_change" %}">change your password</a>.</p>
 {% endblock %}
