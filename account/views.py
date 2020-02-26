@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegistrationForm
+from django.contrib.auth import get_user_model
+from .forms import UserRegistrationForm, UserEditForm, ProfileEditForm
+from .models import Profile
+
+
+User = get_user_model()
 
 
 @login_required
@@ -23,6 +28,7 @@ def register(request):
             user_form.cleaned_data['password'])
             # Save the User object
             new_user.save()
+            Profile.objects.create(user=new_user)
             context = {
                 'new_user': new_user
             }
