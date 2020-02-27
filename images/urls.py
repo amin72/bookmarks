@@ -13,4 +13,7 @@ urlpatterns = [
 
     # like image
     path('like/', views.image_like, name='like'),
+
+    # image list
+    path('', views.image_list, name='list'),
 ]
