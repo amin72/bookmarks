@@ -48,4 +48,10 @@ urlpatterns = [
 
     # edit user
     path('edit/', views.edit, name='edit'),
+
+    # list users
+    path('users/', views.user_list, name='user_list'),
+
+    # user detail
+    path('users/<username>/', views.user_detail, name='user_detail'),
 ]
