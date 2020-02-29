@@ -4,10 +4,11 @@ from django.views.decorators.http import require_POST
 from django.contrib.auth import get_user_model
 from django.contrib import messages
 from django.http import JsonResponse
-from .forms import UserRegistrationForm, UserEditForm, ProfileEditForm
-from .models import Profile, Contact
+from actions.models import Action
 from common.decorators import ajax_required
 from actions.utils import create_action
+from .forms import UserRegistrationForm, UserEditForm, ProfileEditForm
+from .models import Profile, Contact
 
 
 User = get_user_model()
@@ -15,8 +16,18 @@ User = get_user_model()
 
 @login_required
 def dashboard(request):
+    # display all actions by default
+    actions = Action.objects.exclude(user=request.user)
+    following_ids = request.user.following.values_list('id', flat=True)
+
+    if following_ids:
+        # if user is following others, retrieve only their actions
+        actions = actions.filter(user_id__in=following_ids)
+    actions = actions[:10]
+
     context = {
         'section': dashboard,
+        'actions': actions,
     }
     return render(request, 'account/dashboard.html', context)
 
