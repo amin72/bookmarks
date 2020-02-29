@@ -46,7 +46,7 @@ def register(request):
             # Save the User object
             new_user.save()
             Profile.objects.create(user=new_user)
-            create_action(request.user, 'has created an account')
+            create_action(new_user, 'has created an account')
             context = {
                 'new_user': new_user
             }
