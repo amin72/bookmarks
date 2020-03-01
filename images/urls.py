@@ -14,6 +14,9 @@ urlpatterns = [
     # like image
     path('like/', views.image_like, name='like'),
 
+    # most viewed images
+    path('ranking/', views.image_ranking, name='create'),
+
     # image list
     path('', views.image_list, name='list'),
 ]
